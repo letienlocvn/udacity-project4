@@ -74,10 +74,10 @@ functions:
     handler: src/lambda/http/updateTodo.handler
     events:
       - http:
-          authorizer: Auth
           method: patch
-          cors: true
+          authorizer: Auth
           path: todos/{todoId}
+          cors: true
           request:
             schemas:
               application/json: ${file(models/update-todo-request.json)}
@@ -96,10 +96,10 @@ functions:
     handler: src/lambda/http/deleteTodo.handler
     events:
       - http:
-          authorizer: Auth
           method: delete
-          cors: true
+          authorizer: Auth
           path: todos/{todoId}
+          cors: true
     iamRoleStatements:
       - Effect: Allow
         Action:
@@ -119,10 +119,10 @@ functions:
     handler: src/lambda/http/generateUploadUrl.handler
     events:
       - http:
-          authorizer: Auth
           method: post
-          cors: true
+          authorizer: Auth
           path: todos/{todoId}/attachment
+          cors: true
     iamRoleStatements:
       - Effect: Allow
         Action:
